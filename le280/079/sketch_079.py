@@ -23,15 +23,15 @@ class Sketch079(vsketch.SketchClass):
                 t = r + vsk.random(18)
                 pts.append(complex(f + t * math.cos(a), f + t * math.sin(a)))
 
-        for p1, p2 in itertools.product(pts, pts):
-            if p1 != p2 and abs(p1 - p2) < 20:
+        for p1, p2 in itertools.combinations(pts, 2):
+            if abs(p1 - p2) < 20:
                 vsk.line(p1.real, p1.imag, p2.real, p2.imag)
 
         vsk.vpype("color black crop 0 0 500 500")
 
     def finalize(self, vsk: vsketch.Vsketch) -> None:
         vsk.vpype(
-            f"rect 0 0 500 500 text -p 500 513 -s 11 -a right 014 "
+            f"rect 0 0 500 500 text -p 500 513 -s 11 -a right 079 "
             f"layout -m {self.export_margin} -v top {self.export_page_size} "
             "linemerge linesort"
         )

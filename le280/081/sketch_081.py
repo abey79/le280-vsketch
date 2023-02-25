@@ -26,7 +26,7 @@ class Sketch081(vsketch.SketchClass):
 
     def finalize(self, vsk: vsketch.Vsketch) -> None:
         vsk.vpype(
-            f"rect 0 0 500 500 text -p 500 513 -s 11 -a right 014 "
+            f"rect 0 0 500 500 text -p 500 513 -s 11 -a right 081 "
             f"layout -m {self.export_margin} -v top {self.export_page_size} "
             "linesimplify linesort"
         )

@@ -15,8 +15,8 @@ class Sketch014(vsketch.SketchClass):
 
         pts = [complex(vsk.random(0, 500), vsk.random(0, 500)) for _ in range(self.node_count)]
 
-        for p1, p2 in itertools.product(pts, pts):
-            if p1 != p2 and abs(p1 - p2) < self.dist_threshold:
+        for p1, p2 in itertools.combinations(pts, 2):
+            if abs(p1 - p2) < self.dist_threshold:
                 vsk.line(p1.real, p1.imag, p2.real, p2.imag)
 
         vsk.vpype("color black")
