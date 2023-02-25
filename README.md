@@ -4,6 +4,8 @@
 
 This sketch collection is adapted from [`<=280`](http://rrose-editions.com/portfolio/jean-noel-lafargue-280/) by [Jean-Noël Lafargue](https://twitter.com/Jean_no).
 
+![IMG_2874](https://user-images.githubusercontent.com/49431240/221367302-8e153c80-1e3d-4578-8801-1f52fbf6e945.jpeg)
+
 The goal is to port as many sketches as possible to [vsketch](https://github.com/abey79/vsketch), so that they may be plotted. Several of the `<=280` sketch are readily adaptable thanks to the similarities between vsketch and Processing, some might be trickier to convert, while others outright impossible due to their raster nature. Regardless, let's port as many as possible, even if some degree of interpretation is occasionally needed.
 
 Though the collection is primarily an homage to this great book, it also aims to serve as vsketch examples. As a result, keeping sketches under the 280-character limit is a non-goal. Rather, the port should favour idiomatic approaches such as using Numpy.
