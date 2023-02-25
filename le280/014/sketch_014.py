@@ -19,11 +19,13 @@ class Sketch014(vsketch.SketchClass):
             if p1 != p2 and abs(p1 - p2) < self.dist_threshold:
                 vsk.line(p1.real, p1.imag, p2.real, p2.imag)
 
+        vsk.vpype("color black")
+
     def finalize(self, vsk: vsketch.Vsketch) -> None:
         vsk.vpype(
             f"rect 0 0 500 500 text -p 500 513 -s 11 -a right 014 "
             f"layout -m {self.export_margin} -v top {self.export_page_size} "
-            "linesort"
+            "linemerge linesimplify linesort"
         )
 
 

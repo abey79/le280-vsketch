@@ -1,4 +1,5 @@
 import numpy as np
+import vpype as vp
 import vsketch
 
 
@@ -21,7 +22,7 @@ class Sketch081(vsketch.SketchClass):
                 line[i] = complex(np.cos(a) * i, np.sin(a) * i)
             vsk.polygon(line)
 
-        vsk.vpype("crop 0 0 500 500")
+        vsk.vpype("color black crop 0 0 500 500")
 
     def finalize(self, vsk: vsketch.Vsketch) -> None:
         vsk.vpype(

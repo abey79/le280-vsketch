@@ -1,4 +1,6 @@
 git+https://github.com/abey79/vsketch
 vpype[all]
+numpy
+
 black
 isort

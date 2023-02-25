@@ -1,6 +1,7 @@
 import itertools
 import math
 
+import vpype as vp
 import vsketch
 
 
@@ -26,7 +27,7 @@ class Sketch079(vsketch.SketchClass):
             if p1 != p2 and abs(p1 - p2) < 20:
                 vsk.line(p1.real, p1.imag, p2.real, p2.imag)
 
-        vsk.vpype("crop 0 0 500 500")
+        vsk.vpype("color black crop 0 0 500 500")
 
     def finalize(self, vsk: vsketch.Vsketch) -> None:
         vsk.vpype(

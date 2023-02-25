@@ -1,5 +1,6 @@
 import math
 
+import vpype as vp
 import vsketch
 
 
@@ -17,7 +18,7 @@ class Sketch018(vsketch.SketchClass):
             vsk.arc(
                 0, 0, t, t, vsk.random(0, math.tau), vsk.random(0, math.tau), mode="radius"
             )
-        vsk.vpype("crop 0 0 500 500")
+        vsk.vpype("color black crop 0 0 500 500")
 
     def finalize(self, vsk: vsketch.Vsketch) -> None:
         vsk.vpype(

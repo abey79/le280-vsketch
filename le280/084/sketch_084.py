@@ -1,10 +1,12 @@
 import math
 
+import vpype as vp
 import vsketch
 
 
 class Sketch084(vsketch.SketchClass):
     line_count = vsketch.Param(1000, step=50)
+    sub_line_count = vsketch.Param(100, step=10)
     export_page_size = vsketch.Param("a5", choices=vp.PAGE_SIZES.keys())
     export_margin = vsketch.Param(1.5, unit="cm", step=0.5)
 
@@ -14,15 +16,12 @@ class Sketch084(vsketch.SketchClass):
         vsk.translate(250, 250)
         for a in range(self.line_count):
             a1 = vsk.map(a, 0, self.line_count, 0, math.tau)
-            a2 = vsk.map(a % 100, 0, 100, 0, math.tau)
+            a2 = vsk.map(a % self.sub_line_count, 0, self.sub_line_count, 0, math.tau)
             vsk.line(
                 math.cos(a1) * 250, math.sin(a1) * 250, math.cos(a2) * 100, math.sin(a2) * 100
             )
 
         vsk.vpype("color #0004")
-
-        # implement your sketch here
-        # vsk.circle(0, 0, self.radius, mode="radius")
 
     def finalize(self, vsk: vsketch.Vsketch) -> None:
         vsk.vpype(
